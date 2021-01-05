@@ -24,9 +24,9 @@
     ]
   },
   "scripts": {
-    "build": "SET NODE_ENV=production && webpack",
-    "test": "NODE_ENV=test webpack && mocha dist/tests.js",
-    "analyze": "NODE_ENV=production webpack --env.analyze",
+    "build": "SET NODE_ENV=production&& webpack",
+    "test": "SET NODE_ENV=test&& webpack && mocha dist/tests.js",
+    "analyze": "SET NODE_ENV=production&& webpack --env.analyze",
     "start:dev": "SET NODE_ENV=development&& webpack --watch",
     "start:sample": "SET NODE_ENV=development&& webpack --config sample/webpack.plugin.js --watch",
     "prepublishOnly": "yarn build",
