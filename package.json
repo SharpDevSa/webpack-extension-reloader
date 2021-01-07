@@ -13,13 +13,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
     "*.{ts}": [
-      "yarn lint:files",
-      "yarn format:files",
+      "npm run lint:files",
+      "npm run format:files",
       "git add"
     ]
   },
@@ -29,7 +29,7 @@
     "analyze": "SET NODE_ENV=production&& webpack --env.analyze",
     "start:dev": "SET NODE_ENV=development&& webpack --watch",
     "start:sample": "SET NODE_ENV=development&& webpack --config sample/webpack.plugin.js --watch",
-    "prepublishOnly": "yarn build",
+    "prepare": "npm run build",
     "lint": "tslint \"{src,client,typings,specs}/**/*.ts\" --fix --format codeFrame",
     "format": "prettier --write \"{src,client,typings,specs}/**/*.ts\"",
     "lint:files": "tslint --fix --format codeFrame",
